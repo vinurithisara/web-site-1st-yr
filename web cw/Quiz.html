@@ -1,0 +1,771 @@
+<!doctype html>
+<html>
+<head>
+	<title>Quiz</title>
+	<style>
+
+
+
+
+
+body{
+	background-color: #16384c
+}
+h1{
+  text-align: center;
+  color: #fff;
+  font-family: Segoe Script;
+  font-size: 40px;
+}
+.row1{
+	font-family: verdana;
+	font-size: 25px;
+}
+.countdowntimer{
+	color:#C0C0C0;
+	text-align: center;
+}
+.query{
+	background-color: #7EC0EE;
+	font-family: Impact;
+	border-radius: 2;
+	border-color: #C0C0C0;
+	border-style: soild;
+	border-width: 2px;
+
+}
+.sub{
+	background-color: #7EC0EE;
+	border: none;
+	color:white;
+	padding: 15px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+}
+.social img{
+  width: 30px;
+    margin: 8px ;
+    margin-left:30px; 
+}
+.pageeditor h3{
+  margin-left: 30PX;
+
+}
+.footer{
+  background: grey;
+}
+.contactus{
+  font-size: 30px;
+  color: white;
+  margin-left: 30px;
+}
+.right-side{
+  margin-top:-245px; 
+  margin-right: 20px;
+  float: right;
+  color: white;
+}
+.right-side p{
+   font-size:20px; 
+    
+}
+
+
+.newsletter{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    width:550px;
+   
+}
+.newsletter input{
+  height: 40px;
+  width: 250px;
+  border-radius: 32px;
+  margin-right: 20px;
+  
+}
+.btn1{
+  height:47px;
+  padding: 18px 40px;
+  margin-right: 150px;
+  border-radius:30px; 
+  background: #33d9b2;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+
+
+
+
+	</style>
+	<script id="venu" >
+		function look(){
+    clearTimeout(cTimer);
+    lookResult();
+}
+
+function lookResult(){
+    
+    var Q1 = document.Quiz.Q1.value;
+    var Q2 = document.Quiz.Q2.value;
+    var Q3 = document.Quiz.Q3.value;
+    var Q4 = document.Quiz.Q4.value;
+    var Q5 = document.Quiz.Q5.value;
+    var Q6 = document.Quiz.Q6.value;
+    var Q7 = document.Quiz.Q7.value;
+    var Q8 = document.Quiz.Q8.value;
+    var Q9 = document.Quiz.Q9.value;
+    var Q10 = document.Quiz.Q10.value;
+    var marks = 0;
+    var que = 0;
+    
+    if (Q1 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+        marks=marks-1;
+    }
+    
+    if (Q2 == "1"){
+        que++;
+        marks = marks+ 2;
+    }else{
+       marks=marks-1;
+    }
+    
+    if (Q3 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+       marks=marks-1;
+    }
+    
+    if (Q4 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+       marks=marks-1;
+    }
+    
+    if (Q5 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+       marks=marks-1;
+    }
+    
+    if (Q6 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+        marks=marks-1;
+    }
+    
+    if (Q7 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+       marks=marks-1;
+    }
+   
+    if (Q8 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+       marks=marks-1;
+    }
+    
+    if (Q9 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+        marks=marks-1;
+    }
+    
+    if (Q10 == "1"){
+        que++;
+        marks = marks + 2;
+    }else{
+        marks=marks-1;
+    }
+
+    var finished = ["Good!","Not bad..!","Bad!!! Try again.."];
+    console.log(finished);
+    var range;
+    
+    if (que < 2){
+        range = 2;
+    }
+    
+    if (que >= 2 && que < 10){
+        range = 1;
+    }
+    
+    if (que >= 10){
+        range = 0;
+    }
+
+    document.getElementById("quizForm").style.display = "none"; 
+
+
+    document.getElementById("finished").style.visibility = "visible";
+    document.getElementById("display").innerHTML = finished[que];
+    document.getElementById("got").innerHTML = "You marked " + que + " correct answers out of 10 questions.";
+    document.getElementById("collect").innerHTML = "you took " + marks + " points out of 20";
+    
+}
+
+// time setting
+var Sec = 60;
+function timeOut(){
+    var Min = Math.round((Sec - 30) / 60);
+    var remSec = Sec % 60;
+    
+    if(remSec < 10){
+        remSec = "0" + remSec;
+    }
+    document.getElementById('time').innerHTML = Min + ":" + remSec;
+    
+    if(Sec == 0){
+        clearInterval(cTimer);
+        document.getElementById('time').innerHTML = "Expired";
+        findResult();
+    }else{
+        Sec --;
+    }
+}
+var cTimer = setInterval('timeOut()',1000);
+
+function myFunction1() {
+    document.getElementById("font").style.fontSize = "0.8em";
+}
+
+function myFunction2() {
+    document.getElementById("font").style.fontSize = "1.1em";
+}
+
+function myFunction3() {
+    document.getElementById("font").style.fontSize = "1.25em";
+}
+
+function myFunction4() {
+    document.getElementById("font").style.fontSize = "1.4em";
+}
+
+function myFunction5() {
+    document.getElementById("font").style.fontSize = "1.9em";
+}
+		
+
+
+
+
+
+
+
+	</script>
+	
+</head>
+<body>
+
+	<div class=row1>
+
+                <h1>Play With Quiz</h1>
+            
+            <div id="quizes">
+                  <div class="countdowntimer">Countdown Timer :- <span id="time" class="timer"></span></div><!-- set timer -->
+            <form id = "Quiz" name = "Quiz">
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>01. What is the capital city of Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                   <div class="rk1">
+                                          <label class="radio">
+                                          <input type = "radio" id ="choice" name = "Q1" value = "0">
+                                          <span class="answer">
+                                                <label for="label1">Colombo.</label>
+                                          </span></label>
+                                    </div>
+                                    <div class="rk2">
+                                          <label class="radio">
+                                           <input type = "radio" id = "choise" name = "Q1" value = "0">
+                                           <span class="answer">
+                                                <label for="label2">Galle.</label>
+                                          </span></label>
+                                    </div>
+                                    <div class="rk1">
+                                          <label class="radio">
+                                           <input type = "radio" id = "choise" name = "Q1" value = "1">
+                                           <span class="answer">
+                                                <label for="label3">Sri Jayawardanapura.</label>
+                                          </span></label>
+                                    </div>
+                                    <div class="rk2">
+                                          <label class="radio">
+                                          <input type = "radio" id = "choise" name = "Q1" value = "0">
+                                          <span class="answer">
+                                                <label for="label4">Jaffna.</label>
+                                          </span></label>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+            
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>02. What shape is the island of Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q2" value = "1">
+                                          <span class="answer">
+                                                <label for="label5">Pearl.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q2" value = "0">
+                                           <span class="answer">
+                                                <label for="label6">Square.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q2" value = "0">
+                                           <span class="answer">
+                                                <label for="label7">Circle.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q2" value = "0">
+                                          <span class="answer">
+                                                <label for="label8">Triangle.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>03. Where is Sri Lanka located? </div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q3" value = "1">
+                                          <span class="answer">
+                                                <label for="label9">Asia.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q3" value = "0">
+                                           <span class="answer">
+                                                <label for="label10">Europe.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q3" value = "0">
+                                           <span class="answer">
+                                                <label for="label11">Australia.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q3" value = "0">
+                                          <span class="answer">
+                                                <label for="label12">Affrica.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q3" value = "0">
+                                           <span class="answer">
+                                                <label for="label13">South America.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+
+            <div class="section1"></div>
+            
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>04. What kind of climate does Sri Lanka have?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q4" value = "1">
+                                          <span class="answer">
+                                                <label for="label14">Tropical.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q4" value = "0">
+                                           <span class="answer">
+                                                <label for="label15">Temperate.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q4" value = "0">
+                                           <span class="answer">
+                                                <label for="label16">Arid.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q4" value = "0">
+                                          <span class="answer">
+                                                <label for="label17">Sub-arctic.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+            
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>05. What is the highest mountain in Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q5" value = "0">
+                                          <span class="answer">
+                                                <label for="label18">Sri pada.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q5" value = "0">
+                                           <span class="answer">
+                                                <label for="label19">Kirigalpotha.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q5" value = "0">
+                                           <span class="answer">
+                                                <label for="label20">Pidurangala.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q5" value = "1">
+                                          <span class="answer">
+                                                <label for="label21">Piduruthalagala.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q5" value = "0">
+                                           <span class="answer">
+                                                <label for="label22">Hakgala.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+            
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>06. What is the eighth wonder of world?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q6" value = "0">
+                                          <span class="answer">
+                                                <label for="label23">The temple of the tooth realic.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q6" value = "1">
+                                           <span class="answer">
+                                                <label for="label24">Sigiriya.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q6" value = "0">
+                                           <span class="answer">
+                                                <label for="label25">Horton Plains.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q6" value = "0">
+                                          <span class="answer">
+                                                <label for="label26">Ancient city of Anuradapura.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q6" value = "0">
+                                           <span class="answer">
+                                                <label for="label27">Galle fort.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+
+            <div class="section2"></div>
+            
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>07. What is the longest river in Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q7" value = "1">
+                                          <span class="answer">
+                                                <label for="label28">Mahaweli.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q7" value = "0">
+                                           <span class="answer">
+                                                <label for="label29">Kelani.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q7" value = "0">
+                                           <span class="answer">
+                                                <label for="label30">Walawe.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q7" value = "0">
+                                          <span class="answer">
+                                                <label for="label31">Nilwala.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q7" value = "0">
+                                           <span class="answer">
+                                                <label for="label32">Madu.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+           
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>08. What animal appears on the flag of Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q8" value = "0">
+                                          <span class="answer">
+                                                <label for="label33">Tiger.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q8" value = "1">
+                                           <span class="answer">
+                                                <label for="label34">Lion.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q8" value = "0">
+                                           <span class="answer">
+                                                <label for="label35">Zebra.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q8" value = "0">
+                                          <span class="answer">
+                                                <label for="label36">Elephant.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q8" value = "0">
+                                           <span class="answer">
+                                                <label for="label37">Leopard.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+           
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>09. Which ocean surrounds Sri Lanka?</div>
+                              
+                        </div>
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q9" value = "1">
+                                          <span class="answer">
+                                                <label for="label38">Indian.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q9" value = "0">
+                                           <span class="answer">
+                                                <label for="label39">Pacific.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q9" value = "0">
+                                           <span class="answer">
+                                                <label for="label40">Arctic.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q9" value = "0">
+                                          <span class="answer">
+                                                <label for="label41">Atlantic.</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q9" value = "0">
+                                           <span class="answer">
+                                                <label for="label42">North Arctic.</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+           
+            <ul class="web">
+                  <li id="quiz">
+                        <div class="query">
+                              
+                                    <div>10. When did Sri Lanka receive independence?</div>
+                        
+                              
+                        </div>                              
+                        
+                              
+                                    <div class="rk1">
+                                          <input type = "radio" id = "choise" name = "Q10" value = "0">
+                                          <span class="answer">
+                                                <label for="label43">1978</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                           <input type = "radio" id = "choise" name = "Q10" value = "0">
+                                           <span class="answer">
+                                                <label for="label44">1964</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q10" value = "1">
+                                           <span class="answer">
+                                                <label for="label45">1948</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk2">
+                                          <input type = "radio" id = "choise" name = "Q10" value = "0">
+                                          <span class="answer">
+                                                <label for="label46">1919</label>
+                                          </span>
+                                    </div>
+                                    <div class="rk1">
+                                           <input type = "radio" id = "choise" name = "Q10" value = "0">
+                                           <span class="answer">
+                                                <label for="label47">1970</label>
+                                          </span>
+                                    </div>
+                              
+                        
+                  </li>
+            </ul>
+            <center>
+            <!-- submit button -->
+            <div class="sub"><input id = "click" type = "button" value = "Submit Answers" onclick = "look();" onclick="window.location.href='Quizanswers.html'"></div>
+                        
+        </form>
+
+            </div>
+        
+            <!-- answers button -->
+            <a id= "ans" href="Quizanswers.html"><div class="answ"><input id = "ans" type = "button" value = " Answers " ></div></a>
+            <!-- try again button -->
+            <a id= "try" href="Quiz.html"><div class="Try"><input id = "try" type = "button" value = "Try Again" ></div></a>
+        
+     <!--footer-->
+<div class="footer">
+  <br>
+  <br>
+  <div class="contactus">Contact Us:</div>
+  <div class="social_media_icons">
+
+            <a class="social" href="https://www.facebook.com/"><img src="socialmediaicons/facebook.png" alt=""></a>
+            <a class="social" href="https://www.twitter.com/"><img src="socialmediaicons/twitter.png" alt=""></a>
+            <a class="social" href="https://www.google.com/"><img src="socialmediaicons/google1.png" alt=""></a>
+            <a class="social" href="https://www.instagram.com/"><img src="socialmediaicons/insta.png" alt=""></a>
+            <a class="social" href="https://www.youtube.com/"><img src="socialmediaicons/youtube.png" alt=""></a>
+                </div>
+                <br>
+                <br>
+      <div class="pageeditor">
+      <h3><span style="color:white">Page editor :</span> <a href="pageeditor3.html">Venushi Kavitha</a></h3>
+      <br>
+      <br>
+      </div>
+<div class="right-side">
+                <h1>Our Newsletter</h1>
+
+                <p>Enter Your Email to get our news</p>
+
+    <div class="newsletter">
+    <input type="text" placeholder="Please enter your email address">
+    <br>
+    <br>
+    <button class="btn1">Send</button>
+  
+    </div>
+    
+    <br>
+               
+
+            </div><!--right-side-->
+</div><!--footer-->
+
+
+
+
+
+	</body>
+	</html>
+

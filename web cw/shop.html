@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop</title>
+	<link rel="stylesheet" href="thestorestyle.css">
+</head>
+<script src="storescript.js"></script>
+<body>
+<!--header-->
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="logo.png">
+			</div>
+			
+			<ul>
+			
+				<li class="active"><a href="webcw.html">Home</a></li>
+				<li><a href="#">Where to go</a>
+				<ul>
+					<li><a href="galle1.html">Galle</a></li>
+					<li><a href="hikkaduwa.html">Hikkaduwa</a></li>
+					<li><a href="CW part B.html">Nuwara Eliya</a></li>
+					<li><a href="kandy.html">Kandy</a></li>
+					
+
+				</ul>
+			</li>
+				<li><a href="#">Activities</a>
+					<ul>
+							<li><a>Hiking</a></li>
+							<li><a>Swimming</a></li>
+							<li><a>Pilgrimage</a></li>
+							<li><a>Watching birds</a></li>
+							<li><a>Shopping</a></li>
+					</ul>
+				</li>
+				 <li><a href="CW part A 2.html">Gallery</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="Quiz.html">Quiz</a></li>
+				<li><a href="meet the team.html">About us</a></li>
+				<li><a href="CW part A 1.html">Site map</a></li>
+
+			</ul>
+			
+			</div><!--main-->
+</header>
+
+
+
+	<div class="storeWelcoming">
+		<h1>Welcome to Our Shop</h1>
+	</div>
+</div>
+<br>
+
+<div class="footer_fontSizechange">
+	<input type="range" onMouseMove="incfont();" id="fontSize" min="15" max="35" value="20" style="width: 5%;">
+	<p id="size"></p>
+</div>
+
+<form name="MyForm" id="MyForm" onsubmit="return validateForm()">
+	<div class="store_outline">
+		<div class="p1">
+			<div class="item_pic">
+				<img class="imgP" src="kaveen_images/shop1.jpg" width="250" height="150">
+				<h2> Bhuddha Figurine </h2>
+			</div>
+			<div class="item_description">
+				<b> Rs 1000.00 </b><br>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product1" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct1()"> Add To My cart</button>
+			</div>
+		</div>
+
+		<div class="p2">
+			<div class="item_pic">
+				<img class="imgP" src="kaveen_images/shop2.jpg" width="250" height="150">
+				<h2> Wall Art </h2>
+			</div>
+			<div class="item_description">
+				<b>Rs 2000.00 </b><br/>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product2" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct2()"> Add To My cart</button>
+			</div>
+		</div>
+
+		<div class="p3">
+			<div class="item_pic">
+				<img class="imgP" src="kaveen_images/shop3.jpg" width="250" height="150">
+				<h2>Moonstone Carving</h2>
+			</div>
+			<div class="item_description">
+				<b>Rs 1500 </b><br/>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product3" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct3()"> Add To My cart</button>
+			</div>
+		</div>
+
+		<div class="p4">
+			<div class="item_pic">
+				<img class="imgP" src="kaveen_images/shop4.jpg" width="250" height="150">
+				<h2>Sarong</h2>
+			</div>
+			<div class="item_description">
+				<b>Rs 750.00 </b><br/>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product4" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct4()"> Add To My cart</button>
+			</div>
+		</div>
+
+		<div class="p5">
+			<div class="item_pic">
+				<img class="imgP" src="kaveen_images/shop5.jpg" width="250" height="150">
+				<h2> Elephant Handicraft </h2>
+			</div>
+			<div class="item_description">
+				<b>Rs 500.00 </b><br/>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product5" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct5()"> Add To My cart</button>
+			</div>
+		</div>
+
+		<div class="p6">
+			<div class="item_pic">
+				<img src="kaveen_images/shop6.jpg" width="250" height="150">
+				<h2> Raksha Mask </h2>
+			</div>
+			<div class="item_description">
+				<b> Rs 1500.00 </b><br/>
+				+ Free shipping<br>
+				Product Quantity You Want:
+				<input id="product6" type="number" name="PQuantity" min="0">
+				<br/>
+				<button type="button" onclick="shopedProduct6()"> Add To My cart</button>
+			</div>
+		</div>
+		<div class="placeOrder">
+			<div class="placeOrderButtonLayout">
+				<input type="submit" value="Place Your Order" class="purchase">
+				<input type="reset" value="Reset" class="reset">
+			</div>
+		</div>
+	</div>
+
+
+	<div id="details">
+		<table>
+			<tr>
+				<td><label for="name"> <b>Full Name</b> </label><br><br></td>
+				<td><input type="text" id="name" name="fullname"><br><br></td>
+			</tr>
+			<tr>
+				<td><label for="email"><b> E-mail </b></label><br><br></td>
+				<td><input type="email" id="email" name="Email"><br><br></td>
+			</tr>
+			<tr>
+				<td><label for="Address"> <b>Address</b> </label><br><br></td>
+				<td><input type="text" id="address" name="Address"><br><br></td>
+			</tr>
+			<tr>
+				<td><label for="Mnumber"><b> Mobile Number</b> </label><br><br></td>
+				<td><input type="text" id="mnumber" name="Mnumber"><br><br></td>
+			</tr>
+		</table>
+	</div>
+
+</form>
+<br>
+<br>
+<!--footer-->
+<div class="footer">
+	<br>
+	<br>
+	<div class="contactus">Contact Us:</div>
+  <div class="social_media_icons">
+
+  					<a class="social" href="https://www.facebook.com/"><img src="socialmediaicons/facebook.png" alt=""></a>
+  					<a class="social" href="https://www.twitter.com/"><img src="socialmediaicons/twitter.png" alt=""></a>
+  					<a class="social" href="https://www.google.com/"><img src="socialmediaicons/google1.png" alt=""></a>
+  					<a class="social" href="https://www.instagram.com/"><img src="socialmediaicons/insta.png" alt=""></a>
+  					<a class="social" href="https://www.youtube.com/"><img src="socialmediaicons/youtube.png" alt=""></a>
+                </div>
+                <br>
+                <br>
+      <div class="pageeditor">
+      <h3><span style="color:white">Page editor :</span> <a href="pageeditor1.html">Kaveen Hansaka</a></h3>
+      <br>
+      <br>
+      </div>
+<div class="right-side">
+                <h1>Our Newsletter</h1>
+
+                <p>Enter Your Email to get our news</p>
+
+		<div class="newsletter">
+		<input type="text" placeholder="Please enter your email address">
+		<br>
+		<br>
+		<button class="btn1">Send</button>
+	
+		</div>
+		<br>
+            </div><!--right-side-->
+</div><!--footer-->
+
+</body>
+</html>
+
+	
+
+

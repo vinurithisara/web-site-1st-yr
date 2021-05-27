@@ -1,0 +1,35 @@
+.presentation_page h1{
+	font-size: 80px;
+	color: white;
+	border: 1px solid white;
+	border-radius: none;
+	padding: 25px;
+	background-repeat: no-repeat;
+	background-position: right ;
+	background-size: 200px 120px ;
+  }
+.presentation_page ul li{
+	list-style-type:none;
+	font-size:80px; 
+}
+.presentation_page {
+	text-align: center;
+	width:100%;
+	height:575px;
+	
+}
+.presentation_page #Main{
+
+	font-size: 30px;
+	width: 400px;
+	height: 200px;
+	color: white;
+	border: 1px solid white;
+	border-radius: 25px;
+	margin: auto;
+	padding: 10px;
+   
+}
+.names ul li{
+	
+}
